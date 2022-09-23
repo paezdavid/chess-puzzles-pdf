@@ -1,0 +1,19 @@
+extends layout 
+
+block content 
+
+    h1 Chess
+
+    .wrapper
+        main
+            form(action='/' method='post')
+                label(for='startingRating')
+                    | Starting Rating:
+                    input(type='text' name='startingRating')
+                label(for='maxRating')
+                    | Max Rating:
+                    input(type='text' name='maxRating')
+                label(for='amountOfPuzzles')
+                    | Amount of Puzzles:
+                    input(type='text' name='amountOfPuzzles')
+                button Submit
