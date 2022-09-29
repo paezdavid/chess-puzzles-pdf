@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Volkhov:ital@0;1&display=swap');
+
+
+body {
+    background-color: #583E26;
+    font-family: 'Noto Sans', sans-serif;
+    color: #583E26;
+}
+
+h1 {
+    font-family: 'Volkhov', serif;
+    font-weight: 300;
+    color: #583E26;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
+.title-info-section {
+    text-align: center;
+    background-color: #F7C815;
+    padding: 1rem;
+}
+
+.info {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.form-section {
+    background-color: #F7C815;
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 1rem;
+    width: 100%;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    width: 100%;
+}
+
+input {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 15px;
+    margin-top: .5rem;
+}
+
+
+
+button {
+    max-width: 5rem;
+    align-self: flex-start;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    padding: .5rem 1rem;
+
+}
+
+@media (max-width: 850px) {
+    form { flex-direction: column; align-items: initial; }
+    label { margin-right: 0; margin-bottom: 1rem; }
+}

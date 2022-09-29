@@ -2,18 +2,24 @@ extends layout
 
 block content 
 
-    h1 Chess
-
     .wrapper
         main
-            form(action='/' method='post')
-                label(for='startingRating')
-                    | Starting Rating:
-                    input(type='text' name='startingRating')
-                label(for='maxRating')
-                    | Max Rating:
-                    input(type='text' name='maxRating')
-                label(for='amountOfPuzzles')
-                    | Amount of Puzzles:
-                    input(type='text' name='amountOfPuzzles')
-                button Submit
+
+            .title-info-section 
+                h1 Generate a PDF document full of chess puzzles.
+                .info 
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nemo natus, nam quaerat itaque, facere dignissimos iste distinctio magnam, unde sit! Officia unde quod, vero labore dolores sequi ducimus ipsa? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam quidem ipsam beatae qui reprehenderit odit animi dicta! Qui nesciunt quidem nemo, pariatur iusto sequi ad eaque earum sed officiis incidunt.
+
+            .form-section  
+                form(action='/' method='post')
+                    label(for='startingRating')
+                        | Starting Rating:
+                        input(type='text' name='startingRating')
+                    label(for='maxRating')
+                        | Max Rating:
+                        input(type='text' name='maxRating')
+                    label(for='amountOfPuzzles')
+                        | Amount of Puzzles:
+                        input(type='text' name='amountOfPuzzles')
+                    .btn-div
+                        button Submit
