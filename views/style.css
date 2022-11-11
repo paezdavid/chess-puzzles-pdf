@@ -11,7 +11,7 @@
 body {
     background-color: #583E26;
     font-family: 'Noto Sans', sans-serif;
-    color: #583E26;
+    color: hsl(0, 0%, 0%);
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
 main {
     margin: 0 auto;
     max-width: 1200px;
-    padding: 1rem;
+    padding: 1.8rem 1rem;
 }
 
 .title-info-section {
@@ -40,6 +40,7 @@ main {
 .form-section {
     background-color: #F7C815;
     display: flex;
+    padding: 1.5rem 0;
 }
 
 form {
@@ -74,6 +75,13 @@ button {
     border-radius: 15px;
     padding: .5rem 1rem;
 
+}
+
+.errorMessageSection {
+    background: rgb(240, 99, 99);
+    color: white;
+    padding: 1.2rem;
+    text-align: center;
 }
 
 @media (max-width: 850px) {

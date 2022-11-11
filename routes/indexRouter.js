@@ -8,6 +8,16 @@ const dotenv = require('dotenv').config();
 
 router.post('/', async (req, res, next) => {
 
+  const startingRating = Number(req.body.startingRating)
+  const maxRating = Number(req.body.maxRating)
+  const amountOfPuzzles = Number(req.body.amountOfPuzzles)
+
+
+  if (startingRating > maxRating) {
+    res.render("index", { errorMsg: "The input might be incorrect, please try again :)" })
+    
+  }
+
   const uri = `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASS}@cluster0.8jwuy6u.mongodb.net/?retryWrites=true&w=majority`;
   const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
@@ -22,15 +32,15 @@ router.post('/', async (req, res, next) => {
         { 
           $match: { 
             rating: { 
-              $gt: parseInt(req.body.startingRating), 
-              $lt: parseInt(req.body.maxRating) 
+              $gt: startingRating,
+              $lt: maxRating
             } 
           } 
         },
         // Amount of puzzles you want to get
         { 
           $sample: { 
-            size: parseInt(req.body.amountOfPuzzles) 
+            size: amountOfPuzzles
           }
         }
       ]);

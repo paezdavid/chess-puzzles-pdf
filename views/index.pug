@@ -8,19 +8,28 @@ block content
             .title-info-section 
                 h1 Generate a PDF document full of chess puzzles.
                 .info 
-                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nemo natus, nam quaerat itaque, facere dignissimos iste distinctio magnam, unde sit! Officia unde quod, vero labore dolores sequi ducimus ipsa? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam quidem ipsam beatae qui reprehenderit odit animi dicta! Qui nesciunt quidem nemo, pariatur iusto sequi ad eaque earum sed officiis incidunt.
+                    p The aim of this little web project is to give people the chance to download chess puzzles in PDF format and being able to print them, so that they can have access to them even without a computer at hand. 
+                    
+                    p These PDFs may get printed and distributed (as the Lichess license states) for free.
+                    
+                    p A bit of a warning: Once you click on "Submit", your PDF will be created and you will be immediately redirected to the native online PDF viewer of your browser. This way, you can check it out before downloading it.
+                    
 
             .form-section  
                 form(action='/' method='post')
                     label(for='startingRating')
                         | Starting Rating:
-                        input(type='text' name='startingRating')
+                        input(type='number' min="550" max="2899" name='startingRating')
                     label(for='maxRating')
                         | Max Rating:
-                        input(type='text' name='maxRating')
+                        input(type='number' min="551" max="2899" name='maxRating')
                     label(for='amountOfPuzzles')
                         | Amount of Puzzles:
-                        input(type='text' name='amountOfPuzzles')
+                        input(type='number' min="1" max="50" name='amountOfPuzzles')
                     .btn-div
                         button Submit
         
+            if errorMsg 
+                .errorMessageSection 
+                    h3= errorMsg
+                    
